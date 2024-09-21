@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thứ lỗi cho mình</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+            font-family: Arial, sans-serif;
+            transition: background 1s ease-in-out;
+        } 
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        #runaway {
+            position: absolute;
+        }
+
+        #thank-you-message {
+            display: none;
+            font-size: 24px;
+            color: #2d2d2d;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Thứ lỗi cho mình nhaaaaaa</h1>
+
+    <div class="button-container" id="buttons">
+        <button id="ok">okii</button>
+        <button id="runaway">không</button>
+    </div>
+
+    <p id="thank-you-message">Cảm ơn bn nhiều!</p>
+
+    <script>
+        const runawayButton = document.getElementById('runaway');
+        const okButton = document.getElementById('ok');
+        const thankYouMessage = document.getElementById('thank-you-message');
+        const buttonContainer = document.getElementById('buttons');
+
+        // Nút không chạy lung tung
+        runawayButton.addEventListener('mouseover', function () {
+            const x = Math.floor(Math.random() * window.innerWidth - runawayButton.offsetWidth);
+            const y = Math.floor(Math.random() * window.innerHeight - runawayButton.offsetHeight);
+            runawayButton.style.left = x + 'px';
+            runawayButton.style.top = y + 'px';
+        });
+
+        // Khi ấn nút "okii", hiển thị thông báo cảm ơn và ẩn các nút
+        okButton.addEventListener('click', function () {
+            thankYouMessage.style.display = 'block'; // Hiển thị dòng "Cảm ơn bn nhiều!"
+            buttonContainer.style.display = 'none';  // Ẩn các nút "okii" và "không"
+        });
+    </script>
+
+</body>
+</html>
+
